@@ -1,0 +1,6 @@
+<h1> Add a new bookmark/recipe to your <%= @category.name %> category </h1>
+  <%= simple_form_for [@category, @bookmark] do |f| %>
+    <%= f.association :recipe, prompt: "Select a recipe", input_html: {data: {controller: "tom-select"}} %>
+    <%= f.input :comment, prompt: "Enter a comment" %>
+    <%= f.submit "Add to list", class: "btn btn-flat" %>
+    <% end %>

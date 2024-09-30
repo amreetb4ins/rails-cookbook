@@ -1,1 +1,10 @@
 <h1><%= @category.name %></h1>
+<ul>
+ <% @recipes.each do |recipe| %>
+  <li><%= recipe.name %>
+ <% end %>
+</ul>
+<ul>
+<li><%= link_to "Bookmark a new recipe", new_category_bookmark_path(@category) %></li>
+<li><%= link_to "Back to view all categories", root_path %></li>
+</ul>
