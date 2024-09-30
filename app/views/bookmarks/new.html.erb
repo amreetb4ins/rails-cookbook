@@ -4,3 +4,6 @@
     <%= f.input :comment, prompt: "Enter a comment" %>
     <%= f.submit "Add to category", class: "btn btn-flat" %>
     <% end %>
+
+<li><%= link_to "Back to view all categories", root_path %></li>
+<li><%= link_to "Back to view #{@category.name}", category_path(@category)%></li>

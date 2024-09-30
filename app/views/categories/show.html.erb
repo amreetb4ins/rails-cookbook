@@ -7,6 +7,6 @@
 
 
 <ul>
-<li><%= link_to "Bookmark a new recipe", new_category_bookmark_path(@category) %></li>
+<li><%= link_to "Add a new recipe to #{@category.name}", new_category_bookmark_path(@category) %></li>
 <li><%= link_to "Back to view all categories", root_path %></li>
 </ul>
