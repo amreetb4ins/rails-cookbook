@@ -8,15 +8,16 @@
 
 
 <div class="container">
-  <div class= "row">
-    <ul>
+<div class ="list-of-categories">
+<h3>List of Categories</h3>
+<%= link_to "New category", new_category_path %>
+</div>
+
+  <div class= "row card-row">
       <% @categories.each do |category| %>
-      <li>
-        <div class= "category card">
+        <div class= "category-card">
         <%=link_to category.name, category_path(category)%>
         </div>
-      </li>
       <% end %>
-    </ul>
   </div>
 </div>

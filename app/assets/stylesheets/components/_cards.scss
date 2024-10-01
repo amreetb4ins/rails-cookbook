@@ -1,0 +1,42 @@
+.list-of-categories{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+
+  h3{
+    font-size: 22px;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+
+  }
+}
+
+.card-row{
+justify-content: space-evenly;
+margin-top: 10px;
+
+
+}
+.category-card{
+  background-color: lightgrey;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color:black
+
+  }
+}
