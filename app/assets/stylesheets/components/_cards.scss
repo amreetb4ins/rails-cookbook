@@ -80,6 +80,7 @@ grid-gap: 16px;
 
 .recipe-card{
   position: relative;
+  padding: 5px;
 
 }
 .card-recipe-infos{
@@ -90,6 +91,10 @@ grid-gap: 16px;
   align-items: flex-end;
   right: 16px;
   top: -20px;
+
+  p{
+    margin-bottom: auto;
+  }
 }
 
 .btn-delete {
