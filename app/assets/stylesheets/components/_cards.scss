@@ -63,6 +63,8 @@ grid-gap: 16px;
   height: 150px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
+
+
   h5{
     font-weight: bold;
   }
@@ -70,23 +72,41 @@ grid-gap: 16px;
     text-decoration: none;
   }
 }
-
 .recipe-card > img{
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
+.recipe-card{
+  position: relative;
+
+}
 .card-recipe-infos{
   background-color: white;
-  padding: 16px;
-}
-
-.recipe-delete{
+  padding: 18px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: flex-end;
+  right: 16px;
+  top: -20px;
 }
+
+.btn-delete {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+
+  i {
+    color: gray;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+
+
 
 //Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

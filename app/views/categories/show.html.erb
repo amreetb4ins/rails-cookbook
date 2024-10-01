@@ -12,27 +12,24 @@
   <div class="row-card-recipes">
     <% @category.bookmarks.each do |bookmark| %>
       <div class="recipe-card">
-
         <%= image_tag bookmark.recipe.image_url, alt: "#{bookmark.recipe.name} image" %>
+
+        <%= link_to bookmark_path(bookmark),
+          data: { turbo_method: :delete,
+          turbo_confirm: "Are you sure you want to remove #{bookmark.recipe.name} from your #{@category.name} list"},
+          class: 'btn-delete' do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
 
         <div class="card-description">
          <h5><%= bookmark.recipe.name %></h5>
           <p><%= bookmark.recipe.description %></p>
         </div>
-
         <div class= "card-recipe-infos">
-          <div>
             <p><%= bookmark.comment %></p>
-          </div>
-
-          <div class="recipe-delete">
             <%= bookmark.recipe.rating%> <%= '⭐️' * bookmark.recipe.rating %>
-            <%= link_to "Remove recipe", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{bookmark.recipe.name}?" } %>
-          </div>
         </div>
       </div>
-
     <% end %>
-
   </div>
 </div>

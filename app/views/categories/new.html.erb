@@ -1,12 +1,8 @@
-<div class = ".form-new">
-
-<h1>Add new category</h1>
-
-<%= simple_form_for @category do |f| %>
+<div class = "form-new">
+  <h3>Add new category</h3>
+  <%= simple_form_for @category do |f| %>
   <%= f.input :name %>
- <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
-</div>
-<li><%= link_to "Back to view all categories", root_path %></li>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, class: "btn btn-warning"%>
+  <% end %>
 </div>
