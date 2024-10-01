@@ -1,4 +1,4 @@
-.list-of-categories{
+.list-of-categories {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,36 +7,104 @@
   h3{
     font-size: 22px;
   }
-
   a{
     text-decoration: none;
-    color: black;
-
   }
 }
 
-.card-row{
+.list-of-recipes{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card-row, .row-card-recipes{
 justify-content: space-evenly;
 margin-top: 10px;
-
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 16px;
 
 }
 .category-card{
-  background-color: lightgrey;
+  background-size: cover;
+  background-position: center;
   width: 400px;
   height: 200px;
   margin: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-
   a{
-    text-decoration: none;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color:black
+    color:white;
+    text-decoration: none;
+    &:hover{
+      opacity: 0.8;
+    }
 
+  }
+  p{
+    text-align: center;
+    color:white;
+    font-weight: bold;
+  }
+}
+
+
+
+.card-description {
+  padding: 16px;
+  background-color: white;
+  height: 150px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  h5{
+    font-weight: bold;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+.recipe-card > img{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-recipe-infos{
+  background-color: white;
+  padding: 16px;
+}
+
+.recipe-delete{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+//Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .card-row{
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .card-row{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .card-row{
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
