@@ -15,10 +15,17 @@
 
   <div class= "row card-row">
       <% @categories.each do |category| %>
-        <div class= "category-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%=image_path "banner.jpg" %>')">
+        <% if category.photo.attached? %>
+        <div class= "category-card" style="background-image: url('<%= cl_image_path category.photo.key, width: 400, height: 300, crop: :fill %>')">
         <%=link_to category.name, category_path(category)%>
         <p><%= category.recipes.count %> recipes</p>
         </div>
+        <% else%>
+        <div class= "category-card" style="background-image: url('<%= image_path "defaultpic.avif" %>')">
+        <%=link_to category.name, category_path(category)%>
+        <p><%= category.recipes.count %> recipes</p>
+        </div>
+        <% end %>
       <% end %>
   </div>
 </div>
