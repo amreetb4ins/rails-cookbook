@@ -35,7 +35,7 @@ def recipe_builder(meal_id)
   recipe_json["meals"][0]
   p Recipe.create(
     name: recipe_json["meals"][0]["strMeal"],
-    description: recipe_json["meals"][0]["strInstructions"],
+    description: recipe_json["meals"][0]["strInstructions"].truncate(160),
     image_url: recipe_json["meals"][0]["strMealThumb"],
     rating: rand(1.5..5).round(1)
   )
